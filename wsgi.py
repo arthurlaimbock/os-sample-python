@@ -1,9 +1,13 @@
+import socket
+
 from flask import Flask
 application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    return "Hello World! \n"
+    hostname = socket.gethostname()
+    host_ip = socket.gethostbyname(host_name)
+    return "Hello World! This is a message from host: " + hostname + "(" + host_ip + ") \n"
 
 @application.route("/ready")
 def ready():
