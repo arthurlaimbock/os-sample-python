@@ -6,7 +6,7 @@ application = Flask(__name__)
 @application.route("/")
 def hello():
     hostname = socket.gethostname()
-    host_ip = socket.gethostbyname(host_name)
+    host_ip = socket.gethostbyname(hostname)
     return "Hello World! This is a message from host: " + hostname + "(" + host_ip + ") \n"
 
 @application.route("/ready")
